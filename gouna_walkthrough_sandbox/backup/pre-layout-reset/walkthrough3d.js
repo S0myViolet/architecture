@@ -372,7 +372,7 @@
 
   function slabWithHole(y, hole, mat) {
     const s = new THREE.Shape();
-    s.moveTo(0, 0); s.lineTo(15.2, 0); s.lineTo(15.2, 12.8); s.lineTo(0, 12.8); s.closePath();
+    s.moveTo(0, 0); s.lineTo(15.2, 0); s.lineTo(15.2, 12); s.lineTo(0, 12); s.closePath();
     if (hole) {
       const h = new THREE.Path();
       h.moveTo(hole.x1, hole.z1); h.lineTo(hole.x2, hole.z1); h.lineTo(hole.x2, hole.z2); h.lineTo(hole.x1, hole.z2); h.closePath();
@@ -387,7 +387,7 @@
   }
 
   function buildWorld() {
-    const VOID = { x1: 3.3, x2: 6.1, z1: 8.6, z2: 12.8 };  /* stairwell */
+    const VOID = { x1: 3.3, x2: 6.1, z1: 7.7, z2: 12 };  /* stairwell */
 
     /* --- site --- */
     plane(80, 80, MAT.sand, 7, -0.02, 3);
@@ -395,9 +395,9 @@
     plane(7.2, 2.6, MAT.flag, 6.8, 0.01, -1.3);                     /* colonnade paving */
     plane(3.2, 2.6, MAT.flag, 1.6, 0.01, -1.3);                     /* outdoor dining paving */
     plane(4.2, 3.8, MAT.flag, 12.7, 0.012, -2.9);                   /* garden lounge pad */
-    plane(5.8, 4.6, MAT.pave, 12.3, 0.01, 15.1);                    /* entrance court (south) */
-    plane(4.0, 12.8, MAT.pave, -2.1, 0.005, 6.4);                   /* driveway */
-    for (let i = 0; i < 4; i++) plane(1.0, 0.55, MAT.flag, 12.1, 0.02, 13.3 + i * 0.85); /* entry path pads */
+    plane(3.8, 7.0, MAT.pave, 17.1, 0.01, 8.5);                     /* entrance court */
+    plane(4.0, 12, MAT.pave, -2.1, 0.005, 6);                       /* driveway */
+    for (let i = 0; i < 4; i++) plane(0.9, 0.5, MAT.flag, 16.4 - 0, 0.02, 7.0 + 0 + i * 0.75); /* path pads */
 
     /* boundary: low wall + dark slat fence (per renders) */
     const fence = (x, z, len, ry) => {
@@ -411,9 +411,9 @@
     addCollider(0, -0.5, -6.8, -0.1, 0); addCollider(0, 15.1, -6.8, 15.7, 0);
 
     /* --- interior floors --- */
-    plane(15.2, 12.8, MAT.floor0, 7.6, 0.02, 6.4);
+    plane(15.2, 12, MAT.floor0, 7.6, 0.02, 6);
     slabWithHole(FH - 0.26, VOID, MAT.slabEdge);                    /* first floor slab */
-    const f1 = plane(15.2, 12.8, MAT.floor1, 7.6, FH + 0.015, 6.4); /* first floor finish */
+    const f1 = plane(15.2, 12, MAT.floor1, 7.6, FH + 0.015, 6);     /* first floor finish */
     f1.material = MAT.floor1;
     /* punch visual hole in floor1 finish: cover void with dark shaft look instead */
     const voidMask = new THREE.Mesh(new THREE.PlaneGeometry(VOID.x2 - VOID.x1, VOID.z2 - VOID.z1), std({ color: 0x24201a, roughness: 1 }));
@@ -421,8 +421,8 @@
     voidMask.position.set((VOID.x1 + VOID.x2) / 2, FH + 0.02, (VOID.z1 + VOID.z2) / 2);
     scene.add(voidMask);
     /* roof + skylight over stairwell */
-    slabWithHole(FH + WALL_H + 0.04, { x1: 4.0, x2: 5.8, z1: 9.0, z2: 11.4 }, MAT.wall);
-    box(1.8, 0.05, 2.4, MAT.glass, 4.9, FH + WALL_H + 0.2, 10.2, 0, false);
+    slabWithHole(FH + WALL_H + 0.04, { x1: 4.0, x2: 5.8, z1: 8.2, z2: 10.4 }, MAT.wall);
+    box(1.8, 0.05, 2.2, MAT.glass, 4.9, FH + WALL_H + 0.2, 9.3, 0, false);
     /* first-floor north terrace slab over colonnade */
     box(7.8, 0.28, 2.6, MAT.slabEdge, 7.1, FH - 0.14, -1.3);
     plane(7.8, 2.6, MAT.flag, 7.1, FH + 0.01, -1.3);
@@ -461,22 +461,11 @@
       }
     });
 
-    /* main entry (south wall gap x 11.5–12.7): open leaf + wood-slat canopy + sconces (video) */
-    box(1.06, WALL_H, 0.09, MAT.woodDark, 11.55, WALL_H / 2, 12.86, 0.5);
-    box(2.2, 0.5, 0.45, MAT.wood, 12.1, WALL_H - 0.26, 12.9);
-    for (let i = 0; i < 4; i++) box(2.0, 0.06, 0.55, MAT.woodDark, 12.1, 2.32 + i * 0.15, 12.92, 0, false);
-    for (let i = 0; i < 3; i++) box(0.12, 0.3, 0.12, MAT.woodDark, 13.6 + i * 0.5, 2.2, 12.92, 0, false);
-
-    /* --- door lintels (2.1m head) + threshold strips --- */
-    (L.doors || []).forEach(([cx, cz, w, axis, fl]) => {
-      const y0 = fl * FH;
-      const lw = axis === "x" ? w + 0.1 : WALL_T + 0.02;
-      const ld = axis === "x" ? WALL_T + 0.02 : w + 0.1;
-      box(lw, WALL_H - 2.1, ld, MAT.wall, cx, y0 + 2.1 + (WALL_H - 2.1) / 2, cz, 0, false);
-      const th = new THREE.Mesh(new THREE.BoxGeometry(axis === "x" ? w : 0.3, 0.012, axis === "x" ? 0.3 : w), MAT.slabEdge);
-      th.position.set(cx, y0 + 0.021, cz);
-      scene.add(th);
-    });
+    /* main entry door (east wall gap z 6.3–7.5): pivot door + canopy + slat band */
+    box(0.09, WALL_H, 1.06, MAT.woodDark, 15.24, WALL_H / 2, 6.9, 0);
+    box(0.4, 0.5, 2.2, MAT.wood, 15.25, WALL_H - 0.28, 6.9, 0);      /* wood-slat band over door (video) */
+    for (let i = 0; i < 4; i++) box(0.5, 0.06, 2.0, MAT.woodDark, 15.28, 2.35 + i * 0.14, 6.9, 0, false);
+    /* keep door leaf open: no collider in the gap */
 
     /* --- U-stair (plan: 11 + 9 risers, dark stone, glass rail) --- */
     const A = L.stair.flightA, B = L.stair.flightB, Ld = L.stair.landing;
@@ -493,11 +482,11 @@
       box(B.w, h - 0.0, runB + 0.02, stoneDark, B.x, h / 2 + 0, B.z1 - (i + 0.5) * runB);
     }
     /* glass rails: center divider + floor-1 void guard */
-    box(0.05, 2.6, 3.2, MAT.glass, (A.x + B.x) / 2, 1.9, 10.3, 0, false);
-    addCollider(0, (A.x + B.x) / 2 - 0.15, 8.7, (A.x + B.x) / 2 + 0.15, 12.0);
+    box(0.05, 2.6, 3.4, MAT.glass, (A.x + B.x) / 2, 1.9, 9.6, 0, false);
+    addCollider(0, (A.x + B.x) / 2 - 0.15, 7.8, (A.x + B.x) / 2 + 0.15, 11.2);
     box(0.05, 1.05, VOID.z2 - VOID.z1, MAT.glass, 4.62, FH + 0.55, (VOID.z1 + VOID.z2) / 2, 0, false);
     addCollider(1, 4.5, VOID.z1, 6.2, VOID.z2);              /* block east half of stairwell on floor 1 */
-    addCollider(1, VOID.x1 - 0.1, 9.1, 4.5, VOID.z2);        /* block rest except arrival strip z 8.6–9.1 */
+    addCollider(1, VOID.x1 - 0.1, 8.2, 4.5, VOID.z2);        /* block rest except arrival strip z 7.7–8.2 */
 
     /* --- colonnade columns --- */
     L.columns.forEach(([x, z]) => {
@@ -518,8 +507,7 @@
     };
     palm(1.2, -5.6); palm(9.8, -5.9, 1.15); palm(14.4, -5.2, 0.9); palm(17.8, 4.4, 1.1);
 
-    /* ================= furniture (hidden until layout approval) ================= */
-    if (L.showFurniture) {
+    /* ================= furniture per plan ================= */
     /* Reception & Dining (G05) */
     rug(6.6, 1.9, 3.6, 2.7);
     sofa(6.5, 2.8, 3.39, Math.PI);                                  /* 3.39m sofa facing garden */
@@ -631,11 +619,6 @@
     warm(8.5, FH + 2.3, 3.2, 8, 8);      /* master */
     warm(4.7, 2.6, 9.6, 5, 7);           /* stairwell */
 
-    } /* end furniture */
-
-    /* --- debug: north compass over the garden anchor --- */
-    makeLabel("N — garden side", 7.6, 3.4, -5.6, 1.1);
-
     /* ---------- zone labels + markers ---------- */
     const roomsById = {};
     (window.SANDBOX?.rooms || []).forEach((r) => (roomsById[r.id] = r));
@@ -707,7 +690,7 @@
       state.floor = j.floor;
       if (j.t >= 1) state.jump = null;
     } else {
-      const sp = 2.0 * dt;
+      const sp = 3.1 * dt;
       let mx = 0, mz = 0;
       if (state.keys.KeyW || state.keys.ArrowUp) mz -= 1;
       if (state.keys.KeyS || state.keys.ArrowDown) mz += 1;
@@ -723,7 +706,7 @@
         const d = new THREE.Vector2(state.moveTarget.x - state.pos.x, state.moveTarget.z - state.pos.z);
         if (d.length() < 0.15) state.moveTarget = null;
         else {
-          d.normalize().multiplyScalar(2.0 * dt);
+          d.normalize().multiplyScalar(3.1 * dt);
           const bx = state.pos.x, bz = state.pos.z;
           tryMove(d.x, d.y);
           if (Math.abs(bx - state.pos.x) < 1e-4 && Math.abs(bz - state.pos.z) < 1e-4) state.moveTarget = null;
@@ -812,7 +795,7 @@
     const cx = zone.stand ? zone.stand[0] : (x1 + x2) / 2;
     const cz = zone.stand ? zone.stand[1] : (z1 + z2) / 2;
     let lk = zone.look || zone.at;
-    if (Math.abs(lk[0] - cx) < 0.3 && Math.abs(lk[1] - cz) < 0.3) lk = [7.6, 5.5];
+    if (Math.abs(lk[0] - cx) < 0.3 && Math.abs(lk[1] - cz) < 0.3) lk = [7.6, 5];
     let dyaw = Math.atan2(lk[0] - cx || 0.01, -(lk[1] - cz || 0.01)) - state.yaw;
     dyaw = ((dyaw + Math.PI * 3) % (Math.PI * 2)) - Math.PI;
     state.jump = { fx: state.pos.x, fz: state.pos.z, x: cx, z: cz, fyaw: state.yaw, dyaw, floor: zone.floor, t: 0, dur: 1.1 };
