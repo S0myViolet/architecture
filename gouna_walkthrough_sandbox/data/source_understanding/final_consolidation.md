@@ -1,4 +1,14 @@
-# Final consolidation — timestamp-anchored reconstruction (v5)
+# Final consolidation — timestamp-anchored reconstruction
+> **v6 (structural reset):** the shell was subsequently REBUILT per
+> `full_structure_rebuild_diagnosis.md` — entry moved to a deep recess in the
+> FRONT (south) façade (P1 00:16 see-through proof), carport to the SE street
+> corner, west glazing return added to the living, ground flow rebuilt as one
+> connected entry–living–hall–lobby system, powder/WC moved to the east wall
+> (high window), street-facing upper rooms added, and the balcony wrap closed:
+> N terrace → E long balcony → SE over the carport → FRONT street balcony
+> (skylight box) → W stone-parapet terrace. Room list below still applies;
+> positions follow the v6 plan in `data/layout3d.js`.
+
 Merges Parts 1–5. Timebase per `timeline_registry.md` (split offsets from
 metadata: P2 +51.37s, P3 +111.38s; original-video anchors unoffset). All master
 times below are backed by extracted frames unless marked ⚠.

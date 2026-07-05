@@ -192,7 +192,7 @@
 
   function buildWorld() {
     /* void over flight B + landing only — flight A sits under the skylight balcony (P3 M02:11) */
-    const VOID = { x1: 13.4, x2: 15.52, z1: 8.9, z2: 12.52 };
+    const VOID = { x1: 13.35, x2: 15.52, z1: 8.85, z2: 12.45 };
 
     /* ---------- site (garden anchor preserved) ---------- */
     plane(90, 90, MAT.sand, 7, -0.02, 3);
@@ -204,9 +204,10 @@
     box(4.0, 0.45, 0.35, MAT.stone, 5.0, 0.22, -2.85);
     addCollider(0, 3.0, -3.05, 7.0, -2.65);
 
-    /* corner lot streets (P1 00:00–08): main street S + side street E */
-    plane(34, 5.2, MAT.pave, 4, 0.004, 15.5);
-    plane(5.2, 30, MAT.pave, 21.9, 0.004, 4);
+    /* corner lot streets (P1 00:00–08): FRONT street S + side street E,
+       meeting at the SE corner by the carport */
+    plane(44, 5.4, MAT.pave, 8, 0.004, 18.0);
+    plane(5.2, 34, MAT.pave, 21.9, 0.004, 6);
     /* east boundary: low wall + hedge along the side street (runs to the garden corner) */
     box(0.18, 0.55, 19.2, MAT.wall, 19.25, 0.27, 3.1);
     box(0.55, 0.85, 18.8, MAT.plant, 19.7, 0.42, 3.1);
@@ -227,13 +228,24 @@
     makeLabel("planter / water feature (under construction) · uncertain", 18.35, 1.15, 7.5, 0.85, "rgba(120,70,40,.8)");
     addCollider(0, 17.75, 4.5, 18.95, 10.5);
 
-    /* west side: entry path + carport */
-    plane(2.0, 11.6, MAT.sand, -1.0, 0.008, 6.8);               /* path bed */
-    for (let i = 0; i < 8; i++) plane(1.1, 0.6, MAT.flag, -1.05, 0.02, 10.6 - i * 1.05);
-    plane(4.0, 4.4, MAT.pave, -3.1, 0.01, 10.3);                /* carport pad */
-    /* carport pergola */
-    [[-4.5, 8.5], [-1.5, 8.5], [-4.5, 12.1], [-1.5, 12.1]].forEach(([x, z]) => cyl(0.09, 0.09, 2.5, MAT.wood, x, 1.25, z, 10));
-    for (let i = 0; i < 8; i++) box(3.6, 0.05, 0.12, MAT.dark, -3.0, 2.55, 8.6 + i * 0.48, 0, false);
+    /* FRONT strip (P1 00:00–00:16 + final M04:31): sand bed, stepping-stone
+       path from the SE carport to the recessed entry, planting bed with a
+       blockwork under-construction section below the front balcony, low
+       stone boundary wall along the street */
+    plane(12.6, 2.5, MAT.sand, 6.3, 0.006, 13.85);
+    for (let i = 0; i < 6; i++) plane(0.95, 0.62, MAT.flag, 11.9 - i * 1.15, 0.02, 13.5);
+    plane(0.7, 0.9, MAT.flag, 5.4, 0.02, 13.1);
+    plane(3.0, 1.8, MAT.flag, 5.4, 0.018, 11.6);                /* porch paving inside the recess */
+    box(6.0, 0.35, 0.85, MAT.pit, 4.9, 0.17, 14.45);            /* under-construction bed (final M04:31) */
+    addCollider(0, 1.8, 13.95, 8.0, 14.95);
+    box(11.6, 0.5, 0.22, MAT.wall, 5.8, 0.25, 15.15);           /* low front boundary */
+    addCollider(0, -0.2, 14.95, 11.7, 15.35);
+    /* carport at the SE street corner (P1 00:09) */
+    plane(4.0, 4.2, MAT.pave, 14.6, 0.01, 15.7);
+    [[12.9, 13.9], [16.3, 13.9], [12.9, 17.5], [16.3, 17.5]].forEach(([x, z]) => cyl(0.09, 0.09, 2.5, MAT.wood, x, 1.25, z, 10));
+    for (let i = 0; i < 8; i++) box(3.8, 0.05, 0.12, MAT.dark, 14.6, 2.55, 13.95 + i * 0.48, 0, false);
+    /* vertical louvre screen on the front façade near the carport (P1 00:09) */
+    for (let i = 0; i < 4; i++) box(0.07, 2.6, 0.13, MAT.dark, 13.45 + i * 0.5, 1.6, 12.72, 0, false);
     /* low garden boundary + slat fence (anchor) */
     const fence = (x, z, len, ry) => {
       box(len, 0.5, 0.15, MAT.wall, x, 0.25, z, ry);
@@ -254,7 +266,7 @@
         leaf.castShadow = true; scene.add(leaf);
       }
     };
-    palm(0.9, -5.6); palm(10.0, -5.9, 1.15); palm(14.6, -5.4, 0.9); palm(-3.6, 5.2, 1.05);
+    palm(0.9, -5.6); palm(10.0, -5.9, 1.15); palm(14.6, -5.4, 0.9); palm(9.4, 16.6, 1.05); palm(-2.6, 16.0, 0.95);
 
     /* ---------- floors / slabs ---------- */
     plane(W_HOUSE, D_HOUSE, MAT.floor, W_HOUSE / 2, 0.02, D_HOUSE / 2);
@@ -265,39 +277,45 @@
     voidMask.position.set((VOID.x1 + VOID.x2) / 2, FH + 0.02, (VOID.z1 + VOID.z2) / 2);
     scene.add(voidMask);
     /* roof with rooflight hole over the stair landing */
-    slabWithHole(FH + WALL_H + 0.04, { x1: 13.4, x2: 15.5, z1: 10.8, z2: 12.5 }, MAT.wall);
-    box(2.2, 0.07, 1.8, MAT.glass, 14.45, FH + WALL_H + 0.12, 11.65, 0, false);
+    slabWithHole(FH + WALL_H + 0.04, { x1: 13.35, x2: 14.6, z1: 11.15, z2: 12.45 }, MAT.wall);
+    box(1.5, 0.07, 1.6, MAT.glass, 13.98, FH + WALL_H + 0.12, 11.8, 0, false);
 
-    /* west terrace slab — full west side (P3 M01:52 + M02:18 over the carport) */
+    /* CONTINUOUS BALCONY WRAP (P3/P4/P5 + final):
+       N terrace → E long balcony → SE over the carport → FRONT street
+       balcony → W stone-parapet terrace */
+    /* west terrace slab — full west side (P3 M01:52) */
     box(2.6, 0.28, D_HOUSE + 0.4, MAT.slab, -1.2, FH - 0.14, 6.3);
     plane(2.4, 12.6, MAT.flag, -1.2, FH + 0.01, 6.3);
     /* north terrace over colonnade — full north face */
     box(15.8, 0.28, 2.8, MAT.slab, 7.8, FH - 0.14, -1.3);
     plane(15.6, 2.6, MAT.flag, 7.8, FH + 0.01, -1.3);
     /* long east balcony walkway (P4 M03:26–30) */
-    box(1.5, 0.24, 13.75, MAT.slab, 16.25, FH - 0.12, 4.22);
-    plane(1.3, 13.55, MAT.flag, 16.25, FH + 0.01, 4.22);
-    box(1.1, 0.02, 12.9, MAT.dark, 16.78, FH + 0.02, 4.2, 0, false); /* linear drain strip (P3 M02:31) */
+    box(1.5, 0.24, 15.15, MAT.slab, 16.25, FH - 0.12, 5.02);
+    plane(1.3, 14.95, MAT.flag, 16.25, FH + 0.01, 5.02);
+    box(1.1, 0.02, 14.6, MAT.dark, 16.78, FH + 0.02, 5.0, 0, false); /* linear drain strip (P3 M02:31) */
+    /* FRONT street balcony over the entry path (final M04:21–04:35) */
+    box(19.3, 0.24, 1.5, MAT.slab, 7.25, FH - 0.12, 13.3);
+    plane(19.1, 1.3, MAT.flag, 7.25, FH + 0.01, 13.3);
+    box(15.0, 0.02, 0.16, MAT.dark, 7.0, FH + 0.02, 13.85, 0, false); /* linear drain (final M04:35) */
     /* roof overhangs above terraces */
     box(3.0, 0.22, D_HOUSE + 1, MAT.wall, -1.3, FH + WALL_H + 0.02, 6.3);
     box(10.4, 0.22, 3.2, MAT.wall, 4.7, FH + WALL_H + 0.02, -1.4);
-    box(2.0, 0.22, 14.2, MAT.wall, 16.4, FH + WALL_H + 0.02, 4.2);
+    box(2.0, 0.22, 17.6, MAT.wall, 16.4, FH + WALL_H + 0.02, 5.6);
+    box(19.8, 0.22, 1.9, MAT.wall, 7.25, FH + WALL_H + 0.02, 13.4);
     /* dark stone PARAPET on the west terrace (~1.3m — P3 M01:52) */
     box(0.22, 1.3, 5.2, MAT.darkWall, -2.35, FH + 0.65, 3.6);
-    /* terrace glass rails + colliders */
+    /* terrace glass rails + colliders (continuous wrap, no dead ends) */
     const rail = (x, z, len, ry) => box(ry ? 0.05 : len, 1.05, ry ? len : 0.05, MAT.glass, x, FH + 0.55, z, 0, false);
     rail(-1.2, -2.58, 2.6);                       /* n terrace west return edge */
     rail(7.8, -2.58, 15.6);                       /* north terrace front */
-    rail(-2.38, 0.5, 2.2, 1); rail(-2.38, 9.4, 6.2, 1);  /* west terrace outer (parapet fills 1.0–6.2) */
-    rail(-1.2, 12.58, 2.4);                       /* west terrace south end (over carport) */
-    addCollider(1, -2.6, -2.75, 16.0, -2.45);
-    addCollider(1, -2.6, -2.6, -2.2, 12.7);
-    addCollider(1, -2.5, 12.45, 0.1, 12.75);
-    /* east balcony rails: outer + both ends */
-    rail(16.94, 4.22, 13.75, 1);
-    rail(16.25, -2.58, 1.4); rail(16.25, 11.06, 1.4);
-    addCollider(1, 16.8, -2.7, 17.1, 11.2);
-    addCollider(1, 15.6, 10.9, 17.0, 11.2);
+    rail(16.25, -2.58, 1.4);                      /* NE corner segment */
+    rail(-2.38, 0.5, 2.2, 1); rail(-2.38, 10.1, 7.7, 1);  /* west outer (parapet fills 1.0–6.2) */
+    rail(16.94, 5.68, 16.55, 1);                  /* east outer, down to the SE corner */
+    rail(7.25, 13.94, 19.3);                      /* front outer */
+    addCollider(1, -2.6, -2.75, 17.05, -2.45);
+    addCollider(1, -2.6, -2.6, -2.2, 14.05);
+    addCollider(1, 16.8, -2.7, 17.1, 14.05);
+    addCollider(1, -2.5, 13.8, 17.05, 14.1);
 
     /* ---------- walls ---------- */
     L.walls.ground.forEach((s) => wallSeg(s, 0, 0));
@@ -325,25 +343,45 @@
       }
     });
 
-    /* entry porch dressing (video): slat band + timber cladding beside the slider */
-    box(0.45, 0.55, 2.5, MAT.wood, -0.05, WALL_H - 0.3, 2.7);
-    for (let i = 0; i < 4; i++) box(0.55, 0.06, 2.3, MAT.dark, -0.07, 2.28 + i * 0.15, 2.7, 0, false);
-    box(0.12, WALL_H - 0.2, 1.2, MAT.wood, -0.06, WALL_H / 2, 4.45);
-    for (let i = 0; i < 3; i++) box(0.12, 0.3, 0.12, MAT.dark, -0.1, 2.2, 5.4 + i * 1.6, 0, false);
+    /* ENTRY RECESS dressing (P1 00:14–00:18): slat band over the opening,
+       gray stone panel on the west flank, timber cladding on the east flank */
+    box(3.4, 0.55, 0.45, MAT.wood, 5.4, WALL_H - 0.3, 12.62);
+    for (let i = 0; i < 4; i++) box(3.2, 0.06, 0.55, MAT.dark, 5.4, 2.28 + i * 0.15, 12.6, 0, false);
+    box(0.1, WALL_H - 0.1, 1.85, MAT.darkWall, 3.87, (WALL_H - 0.1) / 2, 11.65, 0, false);
+    box(0.1, WALL_H - 0.2, 1.85, MAT.wood, 6.93, (WALL_H - 0.2) / 2, 11.65, 0, false);
 
-    /* family-room slider dressing (P2 M00:55–01:02): slat band + gray reveal */
-    for (let i = 0; i < 4; i++) box(0.3, 0.06, 2.2, MAT.dark, 15.7, 2.32 + i * 0.15, 3.0, 0, false);
-    box(0.26, WALL_H, 1.3, MAT.darkWall, 15.72, WALL_H / 2, 4.75);
+    /* side-room slider dressing (P2 M00:55–01:02): slat band + gray reveal */
+    for (let i = 0; i < 4; i++) box(0.3, 0.06, 2.2, MAT.dark, 15.7, 2.32 + i * 0.15, 2.6, 0, false);
+    box(0.26, WALL_H, 1.2, MAT.darkWall, 15.72, WALL_H / 2, 4.2);
     /* gray service wall panel on the north façade (P1 00:49) */
-    box(1.15, WALL_H - 0.1, 0.3, MAT.darkWall, 12.35, (WALL_H - 0.1) / 2, -0.08);
+    box(1.15, WALL_H - 0.1, 0.3, MAT.darkWall, 12.5, (WALL_H - 0.1) / 2, -0.08);
+
+    /* west glazing return — the living's corner glass (P1 00:16–00:23) */
+    box(0.05, WALL_H - 0.3, 4.4, MAT.glass, 0, WALL_H / 2 - 0.08, 2.8, 0, false);
+    box(0.1, 0.14, 4.4, MAT.frame, 0, WALL_H - 0.13, 2.8, 0, false);
+    box(0.1, 0.08, 4.4, MAT.frame, 0, 0.04, 2.8, 0, false);
+    for (let i = 1; i < 3; i++) cyl(0.02, 0.02, WALL_H - 0.2, MAT.frame, 0, WALL_H / 2, 0.6 + i * 1.47, 8);
+    addCollider(0, -0.15, 0.6, 0.15, 5.0);
+
+    /* guest/service room front window (P1 00:02 façade) */
+    box(1.7, 0.9, 0.18, MAT.wall, 1.6, 0.45, 12.6);
+    box(1.6, 1.35, 0.06, MAT.glass, 1.6, 1.62, 12.6, 0, false);
+    box(1.7, 0.72, 0.18, MAT.wall, 1.6, 2.69, 12.6);
+    addCollider(0, 0.7, 12.45, 2.5, 12.75);
+
+    /* guest WC high frosted window — east wall (P2 M01:18) */
+    box(0.18, 1.9, 1.05, MAT.wall, 15.6, 0.95, 5.9);
+    box(0.06, 0.7, 0.9, MAT.glass, 15.6, 2.32, 5.9, 0, false);
+    box(0.18, 0.34, 1.05, MAT.wall, 15.6, 2.88, 5.9);
+    addCollider(0, 15.45, 5.4, 15.75, 6.4);
 
     /* stair window strip — EAST wall beside flight B + landing (P2 M01:50):
-       sill band below, glass above, cut into the east wall z 9.2–12.6 */
-    box(0.18, 1.9, 3.4, MAT.wall, 15.6, 0.95, 10.9);
-    addCollider(0, 15.45, 9.2, 15.75, 12.6);
-    box(0.06, 1.15, 3.3, MAT.glass, 15.6, 2.47, 10.9, 0, false);
-    box(0.1, 0.08, 3.3, MAT.frame, 15.6, 1.92, 10.9, 0, false);
-    box(0.1, 0.08, 3.3, MAT.frame, 15.6, 3.02, 10.9, 0, false);
+       sill band below, glass above, cut into the east wall z 9.0–12.5 */
+    box(0.18, 1.9, 3.5, MAT.wall, 15.6, 0.95, 10.75);
+    addCollider(0, 15.45, 9.0, 15.75, 12.6);
+    box(0.06, 1.15, 3.4, MAT.glass, 15.6, 2.47, 10.75, 0, false);
+    box(0.1, 0.08, 3.4, MAT.frame, 15.6, 1.92, 10.75, 0, false);
+    box(0.1, 0.08, 3.4, MAT.frame, 15.6, 3.02, 10.75, 0, false);
 
     /* ---------- door lintels + thresholds ---------- */
     (L.doors || []).forEach(([cx, cz, w, axis, fl]) => {
@@ -371,25 +409,23 @@
     const Ld = ST.landing;
     box(Ld.x2 - Ld.x1, Ld.y, Ld.z2 - Ld.z1, MAT.stone, (Ld.x1 + Ld.x2) / 2, Ld.y / 2, (Ld.z1 + Ld.z2) / 2);
     /* frameless glass rail along flight A's lobby side (P2 M01:29) */
-    box(2.9, 2.4, 0.05, MAT.glass, 12.0, 1.9, 11.33, 0, false);
-    addCollider(0, 10.6, 11.2, 13.45, 11.45);
+    box(2.85, 2.4, 0.05, MAT.glass, 11.92, 1.9, 11.24, 0, false);
+    addCollider(0, 10.5, 11.1, 13.35, 11.38);
     /* under-stair passage: leaning panel/mirror + DB plates (P2 M01:29 + M01:44) */
-    box(0.9, 1.35, 0.07, MAT.dark, 12.9, 0.68, 11.55, 0.12, false);
-    box(0.05, 0.55, 0.4, MAT.dark, 9.47, 1.5, 9.6, 0, false);
-    box(0.05, 0.55, 0.4, MAT.dark, 9.47, 1.5, 10.25, 0, false);
-    /* skylight balcony over flight A (P3 M02:11): glazed box + guards */
-    box(1.8, 0.12, 0.8, MAT.frame, 11.05, FH + 0.2, 12.05, 0, false);
-    box(1.7, 0.3, 0.7, MAT.glass, 11.05, FH + 0.42, 12.05, 0, false);
-    addCollider(1, 10.2, 11.7, 11.9, 12.4);
-    rail(11.7, 12.58, 3.4);                          /* balcony parapet at the S gap */
-    addCollider(1, 9.95, 12.45, 13.45, 12.75);
-    box(0.05, 1.05, 1.6, MAT.glass, 13.42, FH + 0.55, 11.8, 0, false); /* guard to the void */
-    addCollider(1, 13.3, 11.0, 13.55, 12.6);
+    box(0.9, 1.35, 0.07, MAT.dark, 12.75, 0.68, 11.5, 0.12, false);
+    box(0.05, 0.55, 0.4, MAT.dark, 7.07, 1.5, 9.4, 0, false);
+    box(0.05, 0.55, 0.4, MAT.dark, 7.07, 1.5, 10.0, 0, false);
+    /* skylight box over flight A — sits in the street-balcony floor (P3 M02:11) */
+    box(1.8, 0.12, 0.8, MAT.frame, 11.15, FH + 0.2, 11.95, 0, false);
+    box(1.7, 0.3, 0.7, MAT.glass, 11.15, FH + 0.42, 11.95, 0, false);
+    addCollider(1, 10.3, 11.6, 12.0, 12.3);
+    box(0.05, 1.05, 1.4, MAT.glass, 13.42, FH + 0.55, 11.9, 0, false); /* guard to the void */
+    addCollider(1, 13.3, 11.2, 13.55, 12.6);
     /* floor-1 void guards: east side of flight B + hall edge */
-    box(0.05, 1.05, 2.3, MAT.glass, 14.66, FH + 0.55, 10.2, 0, false);
-    addCollider(1, 14.5, 9.0, 14.8, 11.4);
-    box(0.75, 1.05, 0.05, MAT.glass, 15.18, FH + 0.55, 8.88, 0, false);
-    addCollider(1, 14.8, 8.75, 15.55, 8.98);
+    box(0.05, 1.05, 2.3, MAT.glass, 14.62, FH + 0.55, 10.1, 0, false);
+    addCollider(1, 14.45, 8.95, 14.78, 11.3);
+    box(0.8, 1.05, 0.05, MAT.glass, 15.15, FH + 0.55, 8.87, 0, false);
+    addCollider(1, 14.75, 8.72, 15.55, 8.97);
 
     /* ---------- concrete columns (colonnade + east passage) ---------- */
     L.columns.forEach(([x, z]) => {
@@ -441,10 +477,10 @@
         sp.position.set(a.p[0], y0 + 0.62, a.p[1]);
         scene.add(sp);
       });
-      /* entrance arrow at the porch pointing into the house */
+      /* entrance arrow at the recess pointing into the house (north) */
       const arrow = new THREE.Mesh(new THREE.ConeGeometry(0.22, 0.7, 12), MAT.debug);
-      arrow.rotation.z = -Math.PI / 2;
-      arrow.position.set(-0.7, 1.2, 2.7);
+      arrow.rotation.x = -Math.PI / 2;
+      arrow.position.set(5.4, 1.3, 13.3);
       scene.add(arrow);
     }
 
