@@ -245,6 +245,11 @@ Deliverables to end up with: **4K cinematic video + 1080p WhatsApp cut + one int
 > **3. Scene files (only if you prefer not to produce the animation):**
 > - A quotation for releasing the **archived 3D scene** (3ds Max File → Archive, including textures and assets), noting the renderer and version used (e.g., Corona/V-Ray), under a license limited to visualization of this villa for our own use.
 >
+> **A few specific points:**
+> - Please base everything on the **final approved revision** of the design (the presentation we have carries review markups on some pages).
+> - The garden design in the presentation does not show the **swimming pool** now being excavated on site — we'd like the walkthrough to include it; we can provide the pool contractor's drawings.
+> - Please confirm the scene reflects the villa **as built in El Gouna** (we noticed the presentation pages are labeled "Almaza").
+>
 > Could you let us know feasibility, pricing and timeline within the next few days? We're aiming to start production within two weeks, and we'd genuinely prefer to keep this work with the team that created the design.
 >
 > Best regards,
