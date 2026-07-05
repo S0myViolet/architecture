@@ -1,0 +1,334 @@
+{
+ "p1": [
+  [
+   "A01a",
+   "front approach start",
+   1,
+   2.0,
+   2.0
+  ],
+  [
+   "A01b",
+   "front approach mid",
+   1,
+   5.0,
+   5.0
+  ],
+  [
+   "A01c",
+   "front approach end",
+   1,
+   8.0,
+   8.0
+  ],
+  [
+   "A02",
+   "carport",
+   1,
+   9.0,
+   9.0
+  ],
+  [
+   "A03",
+   "entrance close-up: gray wall/slat/panel",
+   1,
+   16.0,
+   16.0
+  ],
+  [
+   "A04",
+   "living first view",
+   1,
+   23.0,
+   23.0
+  ],
+  [
+   "A05",
+   "stair/lobby visible from living",
+   1,
+   25.0,
+   25.0
+  ],
+  [
+   "A06",
+   "living->terrace slider",
+   1,
+   29.5,
+   29.5
+  ],
+  [
+   "A07",
+   "garden",
+   1,
+   34.0,
+   34.0
+  ],
+  [
+   "A08",
+   "rear facade",
+   1,
+   38.0,
+   38.0
+  ],
+  [
+   "A09",
+   "walkway",
+   1,
+   45.0,
+   45.0
+  ],
+  [
+   "A10",
+   "gray service wall",
+   1,
+   49.0,
+   49.0
+  ]
+ ],
+ "p2": [
+  [
+   "B01",
+   "terrace under balcony",
+   2,
+   2.0,
+   53.37
+  ],
+  [
+   "B02",
+   "side path: 2 columns + gray wall",
+   2,
+   4.0,
+   55.37
+  ],
+  [
+   "B03",
+   "small room w/ AC",
+   2,
+   11.0,
+   62.37
+  ],
+  [
+   "B04a",
+   "bathroom/vanity start",
+   2,
+   20.0,
+   71.37
+  ],
+  [
+   "B04b",
+   "bathroom/vanity end (small window)",
+   2,
+   27.0,
+   78.37
+  ],
+  [
+   "B05",
+   "under-stair passage w/ panel",
+   2,
+   38.0,
+   89.37
+  ],
+  [
+   "B06",
+   "side room w/ ladder",
+   2,
+   40.0,
+   91.37
+  ],
+  [
+   "B07",
+   "bathroom",
+   2,
+   46.0,
+   97.37
+  ],
+  [
+   "B08",
+   "look-back",
+   2,
+   53.0,
+   104.37
+  ],
+  [
+   "B09",
+   "stair ascent",
+   2,
+   58.5,
+   109.87
+  ]
+ ],
+ "p3": [
+  [
+   "C01",
+   "stair top area",
+   3,
+   1.0,
+   112.38
+  ],
+  [
+   "C02",
+   "stair top / landing",
+   3,
+   10.0,
+   121.38
+  ],
+  [
+   "C03",
+   "corridor: wooden doors + panel",
+   3,
+   13.0,
+   124.38
+  ],
+  [
+   "C04a",
+   "upper rooms start",
+   3,
+   15.0,
+   126.38
+  ],
+  [
+   "C04b",
+   "upper rooms mid",
+   3,
+   20.0,
+   131.38
+  ],
+  [
+   "C04c",
+   "upper rooms end",
+   3,
+   24.0,
+   135.38
+  ],
+  [
+   "C05",
+   "terrace 26-29",
+   3,
+   27.5,
+   138.88
+  ],
+  [
+   "C06",
+   "upper facade w/ slat trim",
+   3,
+   36.0,
+   147.38
+  ],
+  [
+   "C07",
+   "terrace wrap + gray wall",
+   3,
+   40.0,
+   151.38
+  ],
+  [
+   "C08a",
+   "long balcony start",
+   3,
+   45.0,
+   156.38
+  ],
+  [
+   "C08b",
+   "long balcony mid",
+   3,
+   54.0,
+   165.38
+  ],
+  [
+   "C08c",
+   "long balcony end",
+   3,
+   63.0,
+   174.38
+  ]
+ ],
+ "p4": [
+  [
+   "D01",
+   "M02:56 terrace over garden",
+   3,
+   64.62,
+   176.0
+  ],
+  [
+   "D02",
+   "M02:57-58 corner / gray wall",
+   3,
+   66.12,
+   177.5
+  ],
+  [
+   "D03",
+   "M03:00 terrace door into room",
+   3,
+   68.62,
+   180.0
+  ],
+  [
+   "D04",
+   "M03:06 room w/ AC",
+   3,
+   74.62,
+   186.0
+  ],
+  [
+   "D05",
+   "M03:08-10 corridor cluster",
+   3,
+   77.62,
+   189.0
+  ],
+  [
+   "D06a",
+   "M03:11 room w/ balcony door",
+   3,
+   79.62,
+   191.0
+  ],
+  [
+   "D06b",
+   "M03:16 room w/ balcony door end",
+   3,
+   84.62,
+   196.0
+  ],
+  [
+   "D07a",
+   "M03:19 terrace views",
+   3,
+   87.62,
+   199.0
+  ],
+  [
+   "D07b",
+   "M03:24 terrace views end",
+   3,
+   92.62,
+   204.0
+  ],
+  [
+   "D08a",
+   "M03:26 long balcony walkway",
+   3,
+   94.62,
+   206.0
+  ],
+  [
+   "D08b",
+   "M03:30 long balcony walkway end",
+   3,
+   98.62,
+   210.0
+  ]
+ ],
+ "p5x": [
+  [
+   "E00",
+   "boundary check: last second of split footage (M~03:32)",
+   3,
+   100.3,
+   211.68
+  ]
+ ]
+}

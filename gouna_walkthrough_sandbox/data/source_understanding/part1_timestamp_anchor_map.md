@@ -1,0 +1,18 @@
+# Part 1 — timestamp anchor map
+Source: `part_1.mp4` · split_clip · duration (metadata) **51.37s** · master offset **none**
+(local time = master time for this part). Frames: `frames/anchors/p1/` (−2s / 0 / +2s per anchor).
+
+| # | local | master | expected (prompt) | observed in frames | match |
+|---|---|---|---|---|---|
+| A01 | 00:00–00:08 | 00:00–00:08 | front approach | Brick-paved **street corner**, gate pillars clad in rough dark stone, **unit number "14A"**, desert planting, upper floor cantilever with continuous glass-rail terrace band wrapping the street corner, vertical louvre strips on upper corner glazing. Walk begins ON the street. | ✔ (adds street + 14A detail) |
+| A02 | 00:09 | 00:09 | carport | Timber **pergola carport** beside the street corner, dark minivan beneath, sedan on street; stepping-stone path (large dark slabs in gravel) starts beside it and runs along the house's side wall; low stone-clad boundary + planting on the path's outer side. | ✔ |
+| A03 | 00:16 | 00:16 | entrance close-up: gray feature wall + wood slat + wooden side panel | Recessed porch: horizontal **wood-slat band** over the opening, **warm timber-clad reveal** right of the door, **dark gray stone-clad wall** on the left, black-framed **4-panel glass slider**, large gray stone threshold pad. At +2s the slider is open; view passes straight through the room to glazing + white buildings beyond (see-through). | ✔ |
+| A04 | 00:23 | 00:23 | living | Large open living: white walls, recessed spots, gray large-format tile; far inner wall has **two dark timber door frames**; glazing on the entry side and around the garden corner. | ✔ |
+| A05 | 00:25 | 00:25 | stair / lobby | **The stair is visible from inside the living** through a wide opening in the inner wall: straight flight rising with a bright double-height **void above** (skylight glow), door frame beside the stair base. (The "raw concrete" look is the dark marble + frameless glass rail washed out at this distance — confirmed by Part 2 close-ups.) | ✔ — **model correction: stair lobby must be open to the living** |
+| A06 | 00:29–30 | 00:29–30 | living → terrace slider | Out through the garden sliders: colonnade terrace, irregular flagstone, **thick round raw-concrete columns** (gray, not dark), glass-railed upper terrace band above, low stone counter/bench element at the garden edge. | ✔ (columns = gray concrete, more than 3) |
+| A07 | 00:34 | 00:34 | garden | New sod lawn (part brown), low stone retaining/bench wall at the lawn edge, block boundary wall topped with **decorative breeze blocks**, palms + white apartment blocks beyond. **No pool excavation visible anywhere in the garden pans.** | ✔ — **pool pit was a misread (see Part 4)** |
+| A08 | 00:38 | 00:38 | rear façade | Full-height glazing under a deep cantilever, two tall round concrete columns in view, continuous glass-balustrade band above, wood-slat trim over the glazing; at the far (east) end a **second recessed slider with slat band + timber reveal**. | ✔ (second recessed entrance = the family-room slider, entered in Part 2) |
+| A09 | 00:45 | 00:45 | walkway | Covered flagstone walkway along the garden glazing toward the east end; column row; people on the terrace. | ✔ |
+| A10 | 00:49 | 00:49 | gray service wall | Tall **dark-gray rendered wall panel** between two glazing runs (timber plank leaning on it); at +2s: raised stone planter with flowering shrubs at the terrace corner, view toward white buildings. | ✔ (panel on the north façade near the NE corner; planter marks the corner wrap into Part 2) |
+
+Timebase note: all Part-1 anchors verified at local = master (offset 0), per `timeline_registry.md`.

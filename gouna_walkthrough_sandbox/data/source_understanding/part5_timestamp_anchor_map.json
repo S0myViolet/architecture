@@ -1,0 +1,19 @@
+{
+  "part": "5+final",
+  "source_file": "original full WhatsApp video (not uploaded)",
+  "source_type": "original_full_video",
+  "offset_applied_s": 0.0,
+  "coverage": "master 03:33-04:39 is BEYOND the split footage (ends 03:32.55); only the 03:33 anchor is boundary-verified against part_3's final second",
+  "anchors": [
+    { "master": "03:33", "evidence": "balcony end / corner", "status": "boundary-verified" },
+    { "master": "03:35", "evidence": "room seen from balcony", "status": "unverified" },
+    { "master": "03:38", "evidence": "wire at ceiling", "status": "unverified" },
+    { "master": "03:40", "evidence": "internal door + AC above", "status": "unverified" },
+    { "master": "03:45", "evidence": "internal door + AC above", "status": "unverified" },
+    { "master": "03:46-03:49", "evidence": "bathroom: toilet ahead, shower left, vanity right, small high window, beige/tan", "status": "unverified", "dedup_flag": "palette matches ground guest shower" },
+    { "master": "03:53", "evidence": "grey ensuite, black-framed shower", "status": "unverified", "dedup_flag": "likely same gray ensuite as master 02:45 / 03:00-03:10" },
+    { "master": "04:35", "evidence": "balcony wrap, glass balustrade, linear drain", "status": "unverified", "corroborated_by": "master 02:29-02:33 frames" },
+    { "master": "04:39", "evidence": "final orientation, street-facing", "status": "unverified" }
+  ],
+  "model_impact": "no new geometry taken from unverified anchors; all mentioned elements already confirmed in-footage"
+}

@@ -1,0 +1,19 @@
+{
+  "part": 2,
+  "source_file": "part_2.mp4",
+  "source_type": "split_clip",
+  "duration_from_metadata_s": 60.01,
+  "offset_applied_s": 51.37,
+  "anchors": [
+    { "id": "B01", "local": "00:02", "master": "00:53", "expected": "terrace under balcony", "observed": "flagstone walk under the upper balcony; raised stone-edged planter; side street with white blocks beyond the corner", "match": true },
+    { "id": "B02", "local": "00:04", "master": "00:55", "expected": "side path: 2 columns + gray wall", "observed": "covered passage: tall dark-gray textured wall, two thick round concrete columns, bougainvillea, recessed slider with slat band at its end", "match": true },
+    { "id": "B03", "local": "00:11", "master": "01:02", "expected": "small room w/ AC", "observed": "small white room with installed split AC, gray tile, timber door onward (family/den room, entered from the side terrace)", "match": true },
+    { "id": "B04a", "local": "00:20", "master": "01:11", "expected": "bathroom/vanity start", "observed": "inner room with glazed terrace door, then open vanity nook: long stone counter + oval mirror, WC beyond", "match": true },
+    { "id": "B04b", "local": "00:27", "master": "01:18", "expected": "bathroom/vanity end (small window)", "observed": "WC: toilet, round mirror, small high frosted window (exterior wall implied - flagged uncertain in model)", "match": true },
+    { "id": "B05", "local": "00:38", "master": "01:29", "expected": "under-stair passage w/ panel", "observed": "L-stair from lobby: marble treads, frameless glass, left-turn landing, skylit void; open under-stair passage with leaning panel/mirror", "match": true },
+    { "id": "B06", "local": "00:40", "master": "01:31", "expected": "side room w/ ladder", "observed": "corner room: ladder, windows on TWO walls, AC above door", "match": true },
+    { "id": "B07", "local": "00:46", "master": "01:37", "expected": "bathroom", "observed": "beige/cream tiled shower room: oval mirror, wall-hung basin, rain shower, linear drain", "match": true },
+    { "id": "B08", "local": "00:53", "master": "01:44", "expected": "look-back", "observed": "short corridor, veneer door, two black DB plates near the stair, axis pointing at the living glazing", "match": true },
+    { "id": "B09", "local": "00:58.5", "master": "01:49.9", "expected": "stair ascent", "observed": "flight A with window strip beside its top, LEFT quarter-turn, flight B; grille panel under flight B; clip ends mid-ascent", "match": true }
+  ]
+}

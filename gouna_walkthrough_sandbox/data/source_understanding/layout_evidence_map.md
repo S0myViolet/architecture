@@ -1,4 +1,10 @@
 # Layout evidence map — Almaza, Sahel
+> **Superseded (v5):** see `final_consolidation.md` for the current
+> evidence-backed room list. Key corrections since this file: stair lobby is
+> open to the living (P1 00:25); the excavation is the east side-street
+> planter/water-feature strip, not a garden pool; the east side has a covered
+> passage + family-room slider; the long balcony wraps the east side.
+
 Synthesis of: walkthrough videos (flow/orientation — highest priority),
 Kymera technical ground-floor plan (measurements/room schedule),
 design PDF (room identity only). Model axes: garden = north (z<0) —

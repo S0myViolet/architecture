@@ -50,10 +50,10 @@
       "assets/design-references/ref-40.jpg",
       "assets/design-references/ref-41.jpg"
     ],
-    "notes": "New lawn partially laid; boundary wall awaits its slatted fence. Note: an excavation visible on site (possible pool) does not appear in the design pages.",
+    "notes": "New lawn partially laid; boundary wall awaits its slatted fence. Note: the unfinished excavation on site is the planter/water-feature strip along the side street (not in the garden); it does not appear in the design pages.",
     "confidence": "high",
     "labelStatus": "confirmed",
-    "updateNotes": "Confirm whether the excavation is a pool and add its design when available."
+    "updateNotes": "Confirm whether the side-strip excavation is a planter or a water feature and add its design when available."
   },
   {
     "id": "living-area",

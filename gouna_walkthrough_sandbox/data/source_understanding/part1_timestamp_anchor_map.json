@@ -1,0 +1,19 @@
+{
+  "part": 1,
+  "source_file": "part_1.mp4",
+  "source_type": "split_clip",
+  "duration_from_metadata_s": 51.37,
+  "offset_applied_s": 0.0,
+  "anchors": [
+    { "id": "A01", "local": "00:00-00:08", "master": "00:00-00:08", "expected": "front approach", "observed": "street corner, brick paving, unit 14A gate pillars (dark stone), cantilevered upper floor with wrap glass-rail band, vertical louvres, carport ahead", "match": true },
+    { "id": "A02", "local": "00:09", "master": "00:09", "expected": "carport", "observed": "timber pergola carport beside street corner, van beneath; stepping-stone path starts beside it along the side wall", "match": true },
+    { "id": "A03", "local": "00:16", "master": "00:16", "expected": "entrance close-up: gray wall + slat + panel", "observed": "recessed porch: slat band above, timber reveal right, dark gray stone wall left, black 4-panel slider, gray stone threshold; see-through to far glazing", "match": true },
+    { "id": "A04", "local": "00:23", "master": "00:23", "expected": "living", "observed": "open living, gray tile, two timber door frames in the inner wall, corner glazing", "match": true },
+    { "id": "A05", "local": "00:25", "master": "00:25", "expected": "stair/lobby", "observed": "stair flight + double-height skylit void VISIBLE FROM THE LIVING through a wide opening; door beside stair base", "match": true, "model_action": "open stair lobby to the living; move stair within sight-line" },
+    { "id": "A06", "local": "00:29.5", "master": "00:29.5", "expected": "living->terrace slider", "observed": "colonnade terrace: flagstone, thick round raw-concrete columns, glass-rail band above, low stone bench at garden edge", "match": true },
+    { "id": "A07", "local": "00:34", "master": "00:34", "expected": "garden", "observed": "sod lawn, low stone bench wall, breeze-block-topped boundary, palms + white blocks beyond; NO pool excavation", "match": true, "model_action": "remove garden pool pit" },
+    { "id": "A08", "local": "00:38", "master": "00:38", "expected": "rear facade", "observed": "full-height glazing, 2 tall columns, slat trim, glass band above; second recessed slider at the far end", "match": true },
+    { "id": "A09", "local": "00:45", "master": "00:45", "expected": "walkway", "observed": "covered flagstone walkway along garden glazing toward east end", "match": true },
+    { "id": "A10", "local": "00:49", "master": "00:49", "expected": "gray service wall", "observed": "tall dark-gray rendered panel between glazing runs; then corner planter with shrubs", "match": true }
+  ]
+}

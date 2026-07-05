@@ -1,4 +1,11 @@
 # Video sequence map — Almaza, Sahel site walkthrough
+> **Superseded (v5):** the timestamp-anchored protocol docs
+> (`timeline_registry.md`, `part1..part5_timestamp_anchor_map.md`,
+> `final_consolidation.md`) are now the authoritative reading. Known
+> correction: the "pool pit" row below was a misread — the excavation is the
+> planter/water-feature strip along the EAST side street (master 03:24–30),
+> not in the garden.
+
 Sources: walkthrough-part1.mp4 (51s), part2 (60s), part3 (101s).
 Frames: `data/source_understanding/frames/` (2s intervals, 108 frames) +
 `frames/transitions/` (0.75s bursts: entry, stair, upper arrival).

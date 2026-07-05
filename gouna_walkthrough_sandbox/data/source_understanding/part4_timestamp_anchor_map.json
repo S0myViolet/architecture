@@ -1,0 +1,20 @@
+{
+  "part": 4,
+  "source_file": "original full WhatsApp video (not uploaded)",
+  "source_type": "original_full_video",
+  "offset_applied_s": 0.0,
+  "frame_extraction": "part_3.mp4 at local = master - 111.38s",
+  "anchors": [
+    { "id": "D01", "master": "02:56", "p3_local": "01:04.6", "expected": "terrace over garden", "observed": "hall -> bedroom with big glazed door (greenery outside) -> gray bathroom", "match": false },
+    { "id": "D02", "master": "02:57-02:58", "p3_local": "01:06.1", "expected": "corner / gray wall", "observed": "bedroom with AC + balcony slider; copper-veneer bathroom door with frosted transom", "match": false },
+    { "id": "D03", "master": "03:00", "p3_local": "01:08.6", "expected": "terrace door into room", "observed": "gray/green ensuite: black-framed shower, wall-hung toilet", "match": false },
+    { "id": "D04", "master": "03:06", "p3_local": "01:14.6", "expected": "room w/ AC", "observed": "terrazzo-look shower wall tile; exit past copper door", "match": "partial" },
+    { "id": "D05", "master": "03:08-03:10", "p3_local": "01:17.6", "expected": "corridor cluster", "observed": "copper doors with black handles, frosted borrowed-light corridor window, room with AC beyond", "match": true },
+    { "id": "D06a", "master": "03:11", "p3_local": "01:19.6", "expected": "room w/ balcony door", "observed": "bedroom with high wall AC (same turquoise bottle as D01 - likely same room twice)", "match": true },
+    { "id": "D06b", "master": "03:16", "p3_local": "01:24.6", "expected": "room w/ balcony door end", "observed": "bedroom with black-framed glazed balcony door", "match": true },
+    { "id": "D07a", "master": "03:19", "p3_local": "01:27.6", "expected": "terrace views", "observed": "balcony: glass rail, street, white blocks, palms", "match": true },
+    { "id": "D07b", "master": "03:24", "p3_local": "01:32.6", "expected": "terrace views end", "observed": "looking down at unfinished blockwork excavation strip with ladder + formwork beside the side street", "match": true },
+    { "id": "D08a", "master": "03:26", "p3_local": "01:34.6", "expected": "long balcony walkway", "observed": "long narrow balcony, glass balustrade wrapping an L, large floor tiles", "match": true },
+    { "id": "D08b", "master": "03:30", "p3_local": "01:38.6", "expected": "long balcony walkway end", "observed": "walkway corner; planter/excavation strip below; palms + white blocks", "match": true }
+  ]
+}

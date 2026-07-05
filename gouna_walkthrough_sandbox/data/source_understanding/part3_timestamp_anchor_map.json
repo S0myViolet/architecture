@@ -1,0 +1,22 @@
+{
+  "part": 3,
+  "source_file": "part_3.mp4",
+  "source_type": "split_clip",
+  "duration_from_metadata_s": 101.17,
+  "offset_applied_s": 111.38,
+  "anchors": [
+    { "id": "C01", "local": "00:00-00:03", "master": "01:51-01:54", "expected": "stair top area", "observed": "upper terrace with dark stacked-stone parapet, glass balustrade, view over low villas; lobby glazing behind", "match": "partial" },
+    { "id": "C02", "local": "00:10", "master": "02:01", "expected": "stair top / landing", "observed": "upper hall: timber door frames, AC above a door, white surface DB cabinet", "match": "partial" },
+    { "id": "C03", "local": "00:13", "master": "02:04", "expected": "corridor: wooden doors + panel", "observed": "hall with multiple timber doors, open door to window room", "match": true },
+    { "id": "C04a", "local": "00:15", "master": "02:06", "expected": "upper rooms start", "observed": "corner bedroom with glazed doors on two adjacent walls (terrace + balcony)", "match": true },
+    { "id": "C04b", "local": "00:20", "master": "02:11", "expected": "upper rooms mid", "observed": "black-framed glass door onto street balcony; GLAZED SKYLIGHT BOX in the balcony floor (stair rooflight)", "match": true },
+    { "id": "C04c", "local": "00:24", "master": "02:15", "expected": "upper rooms end", "observed": "balcony views over street: palms, white blocks", "match": true },
+    { "id": "C05", "local": "00:26-00:29", "master": "02:17-02:20", "expected": "terrace", "observed": "looking down at carport pergola slats + hedge - balcony wraps the approach corner", "match": true },
+    { "id": "C06", "local": "00:36", "master": "02:27", "expected": "upper facade w/ slat trim", "observed": "street verge below (breeze-block wall), slat-trim band on facade, neighbour villa", "match": true },
+    { "id": "C07", "local": "00:38-00:42", "master": "02:29-02:33", "expected": "terrace wrap + gray wall", "observed": "narrow balcony walkway: glass rail, tall window, LINEAR DRAIN strip; then bedroom with AC over door", "match": true },
+    { "id": "C08a", "local": "00:45", "master": "02:36", "expected": "long balcony start", "observed": "bedroom: veined gray floor, AC above door, slot window", "match": false },
+    { "id": "C08b", "local": "00:54", "master": "02:45", "expected": "long balcony mid", "observed": "GRAY bathroom: black-framed shower, frosted top-hinged window, oval mirror, linear drain", "match": false },
+    { "id": "C08c", "local": "01:03", "master": "02:54", "expected": "long balcony end", "observed": "upper hall between rooms", "match": false }
+  ],
+  "note": "C08 label drift: the long balcony walkway occurs at master 03:26-03:30 (local 01:35-01:39), covered by the Part 4 anchors."
+}

@@ -1,0 +1,85 @@
+{
+  "description": "Master timeline registry for the Almaza, Sahel walkthrough reconstruction. Maps each split clip's LOCAL time to the MASTER timeline of the original full WhatsApp video. Rule: master_time = local_file_time + sum of durations of all prior split parts. Parts labelled source_type=original_full_video use their visible timestamps directly with NO offset.",
+  "generated": "2026-07-05",
+  "timebase_rule": {
+    "split_clips": "master_time = local_file_time + offset_applied. Never seek master time inside a split file; always convert to local first. Never double-add offsets.",
+    "original_full_video": "visible timestamps are already master times; offset_applied = 0 and must stay 0."
+  },
+  "parts": [
+    {
+      "part_number": 1,
+      "source_file": "part_1.mp4 (upload a00739a1-part_1.mp4)",
+      "source_type": "split_clip",
+      "local_start": "00:00.00",
+      "master_start": "00:00.00",
+      "master_end": "00:51.37",
+      "duration_from_metadata_s": 51.37,
+      "fallback_duration": "00:51",
+      "duration_source_used": "metadata",
+      "offset_applied_s": 0.0,
+      "offset_applied": "00:00.00"
+    },
+    {
+      "part_number": 2,
+      "source_file": "part_2.mp4 (upload c9e4aac1-part_2.mp4)",
+      "source_type": "split_clip",
+      "local_start": "00:00.00",
+      "master_start": "00:51.37",
+      "master_end": "01:51.38",
+      "duration_from_metadata_s": 60.01,
+      "fallback_duration": "01:00",
+      "duration_source_used": "metadata",
+      "offset_applied_s": 51.37,
+      "offset_applied": "00:51.37",
+      "fallback_offset": "00:51 (delta vs metadata: +0.37s)"
+    },
+    {
+      "part_number": 3,
+      "source_file": "part_3.mp4 (upload 7622a712-part_3.mp4)",
+      "source_type": "split_clip",
+      "local_start": "00:00.00",
+      "master_start": "01:51.38",
+      "master_end": "03:32.55",
+      "duration_from_metadata_s": 101.17,
+      "fallback_duration": null,
+      "duration_source_used": "metadata",
+      "offset_applied_s": 111.38,
+      "offset_applied": "01:51.38",
+      "fallback_offset": "01:51 (delta vs metadata: +0.38s)"
+    },
+    {
+      "part_number": 4,
+      "source_file": "original full WhatsApp video (NOT among uploads)",
+      "source_type": "original_full_video",
+      "anchor_range_master": "02:56 - 03:30",
+      "offset_applied_s": 0.0,
+      "offset_applied": "none (visible timestamps are master times)",
+      "footage_resolution": "COVERED by part_3.mp4: local = master - 111.38s, i.e. local 01:04.6 - 01:38.6. Frames extracted from part_3 at those local times.",
+      "note": "Do not add any offset to these anchors. The inverse mapping into part_3 is only for frame extraction."
+    },
+    {
+      "part_number": 5,
+      "source_file": "original full WhatsApp video (NOT among uploads)",
+      "source_type": "original_full_video",
+      "anchor_range_master": "03:33 - 03:49",
+      "offset_applied_s": 0.0,
+      "offset_applied": "none (visible timestamps are master times)",
+      "footage_resolution": "NOT COVERED: split parts end at master 03:32.55. part_3's final ~1s (local 100.2-101.1 = master 03:31.6-03:32.5) is the closest available footage and was extracted as a boundary cross-check. Anchors are otherwise reconstructed from the user's written evidence observations.",
+      "limitation": "Original full video required to verify these anchors frame-by-frame."
+    },
+    {
+      "part_number": "final",
+      "source_file": "original full WhatsApp video (NOT among uploads)",
+      "source_type": "original_full_video",
+      "anchor_range_master": "03:53 - 04:39",
+      "offset_applied_s": 0.0,
+      "offset_applied": "none (visible timestamps are master times)",
+      "footage_resolution": "NOT COVERED: entirely beyond the split footage (ends 03:32.55). Reconstructed from the user's written evidence observations only.",
+      "limitation": "Original full video required to verify these anchors frame-by-frame."
+    }
+  ],
+  "split_footage_total_s": 212.55,
+  "split_footage_total": "03:32.55",
+  "original_video_last_referenced_anchor": "04:39",
+  "coverage_gap": "master 03:32.55 - 04:39 (~66s) exists only in the original full video, which is not among the uploaded files."
+}
