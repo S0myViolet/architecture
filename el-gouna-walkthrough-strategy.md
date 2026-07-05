@@ -270,6 +270,24 @@ The ~3.5-minute site video (villa 14A) shows the house is much further along tha
 4. *The video is good reference material* (steady enough, daylight, full coverage: approach, ground floor, garden, stairs, upper floor, bathrooms, balconies) but remains below 3D-reconstruction quality due to WhatsApp compression and fast pans — the re-shoot advice stands only if a scan route is ever attempted.
 5. *Landscaping/pool are unfinished in reality* — make sure the walkthrough brief explicitly includes finished pool + garden from the design scene, as these will sell the exterior shots.
 
-### Appendix B — source notes
+### Appendix B — Design package audit (Kymera "The Palm Niche" deck, 58 pages, reviewed July 2026)
+
+**Confirmed:** the design is for this exact villa — the entrance stepping-stone path, round dark columns, wood-slat band above the entry, fence pier layout, and Red Sea mountain backdrop in the renders all match the site video. The renders are 3ds Max work ("3DS Presentation"), so Kymera holds the furnished scene. One page header oddity: every page reads "MR KARIM ELHELALY /// **ALMAZA**" — likely an internal client/address label; confirm with Kymera that the scene is the El Gouna villa's final revision.
+
+**What the deck contains:** cover + section dividers; Ground Floor 01 (Entrance & Staircase, Reception/Dining/Kitchen ~9 views, Powder Room, Guest Toilet, Guest Bedroom ×3, Guest Bathroom); Ground Floor 02 (Reception & Dining ×5); Landscape (day ×7 + night ×7: pergola with outdoor kitchen/bar, outdoor dining, garden lounge, entrance path); First Floor (Master Bedroom ×5, Master Dressing, Master Bathroom, General Bedroom ×5, General Bathroom ×2); Thank-You page with Kymera contacts (kymeradesigns.com). Several pages carry blue-pen review markups — evidence of a revision round; request the *final* approved scene.
+
+**What the deck does NOT contain** (keep these in the asset request): floor plans, dimensions, FF&E/furniture schedule, material schedule, lighting plan.
+
+**Design language** (for briefing any artist): coastal-boho — white/ivory textured plaster, light large-format floors, rattan/cane wardrobe fronts and furniture, jute rugs, woven pendant lights, wood ceiling fans, palm-motif artwork, LED-backlit plaster niche wall in reception, terrazzo master bathroom, black-frame glazing.
+
+**Design ↔ as-built deviations to resolve in the walkthrough brief:**
+1. **Pool:** the site shows what appears to be a pool excavation; NO pool exists anywhere in the landscape renders. The walkthrough scene must add the pool (get its drawings from the pool contractor) or the exterior shots will contradict reality.
+2. **Staircase:** render shows light stone treads + thin metal handrail + LED step lights; as-built has dark stone treads + glass balustrade. Decide which the walkthrough shows (as-built recommended).
+3. **Floor tone:** as-built ground-floor tile is warmer/darker greige than the near-white renders — the scene's floor material should be matched to reality for honesty.
+4. **Reception niche wall** (organic LED-backlit shelving) is a to-be-built gypsum feature, not yet on site — confirm it's still planned before featuring it.
+5. **Roof terrace** exists on site (glass balustrades, visible in video) but has no design pages — decide whether the walkthrough includes it.
+6. **Ceilings:** renders show textured plaster + cornice in bedrooms; as-built ceilings are smooth painted — minor, but pick one for the scene.
+
+### Appendix C — source notes
 
 Figures marked *(estimate)* are modeled from published marketplace rates, not live quotes. Published anchors used: Upwork architectural-rendering rate page ($20–40/hr, median ~$25); Trim Render public $75/sec flat rate (single-vendor anchor); NoTriangle $5,000–30,000 per 30–60 s; ArchiCGI animation from $3,600; Stuccco/BoxBrownie staging price pages; Runway/Veo/Kling 2026 pricing pages via trackers; Shapespark $35/$58/mo (2026-verified); Kuula ~$16–20/mo; 3DVista $499 one-time; CubiCasa pricing page; Matterport 2026 plan guides. Vendor capability claims (Matterport "Genesis" generative staging, splat AI staging, "SketchUp-to-UE5 in an hour") were treated as marketing until corroborated and are excluded from the recommendation where unverified.
