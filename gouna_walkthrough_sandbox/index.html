@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Gouna House — Walkthrough</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="brand">El Gouna House</div>
+  <div class="navlinks">
+    <a href="#viewer">Walkthrough</a>
+    <a href="#rooms">Rooms</a>
+    <a href="#gallery">Design</a>
+    <a href="#video">Video</a>
+    <a href="#compare">Today · Intended</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg" style="background-image:url('assets/design-references/ref-31.jpg')"></div>
+  <div class="hero-veil"></div>
+  <div class="hero-content reveal">
+    <p class="hero-kicker">Villa 14A · El Gouna · Red Sea</p>
+    <h1>El Gouna House<br>Walkthrough</h1>
+    <p class="hero-sub">The house as it stands today, and the home it is becoming —<br>room by room, in one quiet place.</p>
+    <a class="btn-primary" href="#viewer">Start Walkthrough</a>
+  </div>
+  <div class="hero-hint">scroll</div>
+</header>
+
+<main>
+
+  <!-- 1 · Walkthrough viewer -->
+  <section id="viewer" class="section">
+    <div class="section-head reveal">
+      <p class="kicker">The Walkthrough</p>
+      <h2>Scene by scene</h2>
+      <p class="lede">Frames from the real site walkthrough. Where a design exists for the room,
+      switch to the <em>intended look</em> without leaving the scene.</p>
+    </div>
+    <div class="viewer reveal">
+      <div class="viewer-stage">
+        <img id="viewerImage" alt="Walkthrough scene">
+        <div class="stage-tag" id="stageTag">Today</div>
+        <button class="stage-arrow left" id="prevBtn" aria-label="Previous">&#8592;</button>
+        <button class="stage-arrow right" id="nextBtn" aria-label="Next">&#8594;</button>
+      </div>
+      <div class="viewer-panel">
+        <div class="viewer-meta">
+          <span class="chip" id="viewerType"></span>
+          <span class="chip subtle" id="viewerStatus"></span>
+        </div>
+        <h3 id="viewerName"></h3>
+        <p id="viewerNotes"></p>
+        <div class="viewer-actions">
+          <button class="btn-ghost" id="toggleLook">View intended look</button>
+        </div>
+        <div class="viewer-dots" id="viewerDots"></div>
+      </div>
+    </div>
+    <div class="thumbstrip reveal" id="thumbStrip"></div>
+  </section>
+
+  <!-- 2 · Room navigation -->
+  <section id="rooms" class="section alt">
+    <div class="section-head reveal">
+      <p class="kicker">The House</p>
+      <h2>Rooms &amp; zones</h2>
+      <p class="lede">Every area identified from the walkthrough and the design pages.
+      Labels marked <em>inferred</em> are best guesses, not confirmed assignments.</p>
+    </div>
+    <div class="room-grid" id="roomGrid"></div>
+  </section>
+
+  <!-- 3 · Design gallery -->
+  <section id="gallery" class="section">
+    <div class="section-head reveal">
+      <p class="kicker">The Design</p>
+      <h2>Intended finished look</h2>
+      <p class="lede">Pages from the Kymera design presentation — the target the house is being finished toward.
+      <a href="assets/pdf/design-presentation.pdf" target="_blank">Open the full PDF&nbsp;&rarr;</a></p>
+    </div>
+    <div class="gallery-tabs reveal" id="galleryTabs"></div>
+    <div class="gallery-grid reveal" id="galleryGrid"></div>
+  </section>
+
+  <!-- 4 · Video -->
+  <section id="video" class="section alt">
+    <div class="section-head reveal">
+      <p class="kicker">The Record</p>
+      <h2>Original site video</h2>
+      <p class="lede">The walkthrough as filmed on site, in three parts.</p>
+    </div>
+    <div class="video-wrap reveal">
+      <video id="sitePlayer" controls playsinline preload="metadata"
+             src="assets/video/walkthrough-part1.mp4"></video>
+      <div class="video-parts" id="videoParts">
+        <button data-src="assets/video/walkthrough-part1.mp4" class="active">Part 1 · Exterior &amp; entry</button>
+        <button data-src="assets/video/walkthrough-part2.mp4">Part 2 · Ground floor</button>
+        <button data-src="assets/video/walkthrough-part3.mp4">Part 3 · Upper floor</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · Today vs intended -->
+  <section id="compare" class="section">
+    <div class="section-head reveal">
+      <p class="kicker">The Transformation</p>
+      <h2>Today · Intended</h2>
+      <p class="lede">Side by side — the room as filmed, and its design reference.
+      Angles differ; these are honest pairings, not exact overlays.</p>
+    </div>
+    <div class="compare-list" id="compareList"></div>
+  </section>
+
+  <!-- 6 · Notes + update guide -->
+  <section id="notes" class="section alt">
+    <div class="notes-cols">
+      <div class="note-card reveal">
+        <h3>Sandbox notes</h3>
+        <p>This is a living sandbox, not a finished 3D model. Scenes come from real video frames;
+        the “intended look” comes from the design PDF. The garden excavation (possible pool) and the
+        upper terraces have no design pages yet — those areas show the site only.</p>
+      </div>
+      <div class="note-card reveal">
+        <h3>How to update later</h3>
+        <ul>
+          <li><code>data/rooms.json</code> — room names, notes, frame &amp; reference paths <span class="mut">(mirror any edit into <code>data/rooms.js</code>)</span></li>
+          <li><code>assets/frames/</code> — add newer site photos, then list them in the room</li>
+          <li><code>assets/design-references/</code> — add or replace design images</li>
+          <li><code>styles.css</code> — colours, typography, spacing</li>
+          <li><code>app.js</code> — viewer behaviour, sections, ordering</li>
+        </ul>
+        <p class="mut">Ask your AI assistant: “In <code>gouna_walkthrough_sandbox</code>, update &lt;room / section / style&gt; …”</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <span>El Gouna House Walkthrough — private sandbox</span>
+  <span class="mut">Assets: site video (June 2026) · Kymera design presentation</span>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <img id="lbImage" alt="">
+  <div class="lb-caption" id="lbCaption"></div>
+</div>
+
+<!-- Room detail overlay -->
+<div class="roomsheet" id="roomSheet" hidden>
+  <div class="sheet-inner">
+    <button class="lb-close" id="sheetClose" aria-label="Close">&times;</button>
+    <div class="sheet-head">
+      <h3 id="sheetName"></h3>
+      <div id="sheetChips"></div>
+    </div>
+    <p id="sheetNotes"></p>
+    <h4>Today on site</h4>
+    <div class="sheet-row" id="sheetFrames"></div>
+    <h4>Intended design</h4>
+    <div class="sheet-row" id="sheetRefs"></div>
+  </div>
+</div>
+
+<script src="data/rooms.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
