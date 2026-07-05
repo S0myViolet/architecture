@@ -28,6 +28,19 @@ python3 -m http.server 8000
 | `assets/video/` | The original walkthrough video (3 parts) |
 | `assets/pdf/design-presentation.pdf` | The full Kymera design PDF |
 
+## 3D walkthrough
+
+The **Enter 3D Walkthrough** section opens a first-person view of an *approximate*
+reconstruction of the house (inferred from the site video — not measured drawings).
+
+Controls: **drag** to look · **WASD / arrows** to walk · **click the floor** to walk there ·
+walk onto the **stairs** to change floors · click a **gold ring** (or "Room details") to open
+that room's today-vs-intended sheet · **Esc** to exit.
+
+To adjust the 3D layout (walls, rooms, stairs, furniture cues, start position):
+edit `data/layout3d.js` — everything is plain numbers in metres with comments.
+The engine lives in `js/walkthrough3d.js`; Three.js is vendored at `js/three.min.js`.
+
 ## Updating it
 
 - **Room names, notes, images, order** → edit `data/rooms.json`, then copy the same

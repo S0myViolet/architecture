@@ -123,7 +123,8 @@
   });
   toggleLook.addEventListener("click", () => { showDesign = !showDesign; subIdx = 0; renderScene(); });
   document.addEventListener("keydown", (e) => {
-    if (!lightbox.hidden || !$("roomSheet").hidden) return;
+    const three = document.getElementById("threeOverlay");
+    if (!lightbox.hidden || !$("roomSheet").hidden || (three && !three.hidden)) return;
     if (e.key === "ArrowRight") $("nextBtn").click();
     if (e.key === "ArrowLeft") $("prevBtn").click();
   });
@@ -265,6 +266,9 @@
       row.appendChild(pair);
       compareList.appendChild(row);
     });
+
+  // expose for the 3D walkthrough (js/walkthrough3d.js)
+  window.SANDBOX = { rooms, openRoomSheet: openSheet };
 
   // ---------- scroll behaviour ----------
   const nav = document.querySelector(".topnav");
