@@ -255,6 +255,21 @@ Deliverables to end up with: **4K cinematic video + 1080p WhatsApp cut + one int
 
 ---
 
-### Appendix — source notes
+### Appendix A — As-built condition (assessed from the site walkthrough video, reviewed July 2026)
+
+The ~3.5-minute site video (villa 14A) shows the house is much further along than "structurally built" — it is at **fit-out/snagging stage**, which changes several cost and feasibility assumptions in this document for the better:
+
+**Already installed:** large-format porcelain flooring throughout; interior painting; wood-veneer doors hung; recessed ceiling lighting; split AC units in most rooms; bathrooms ~90% fitted (WCs, wall-hung basins, oval mirrors, black-framed walk-in showers, grey concrete-look tile); feature staircase with dark stone treads, glass balustrade and skylight; floor-to-ceiling sliding glazing; covered terrace with circular columns and flagstone paving; upper-floor terraces/balconies with glass balustrades.
+
+**Still missing (the visualization gap):** kitchen (walls show capped MEP stubs only), built-in wardrobes (empty niches), all loose furniture and décor, window treatments, some electrical finals (hanging cables in places), landscaping (bare beds, patchy new grass, unrendered block boundary wall), and the **swimming pool — excavated pit only**.
+
+**Implications:**
+1. *Every visible finish is real and photographable* — whoever produces the walkthrough can match floors, tiles, doors and bathroom fixtures from footage/photos instead of guessing from renders. This shrinks Plan C's modeling risk and cost.
+2. *The AI-staging budget lane gets stronger*: rooms already have final floors, paint and light fixtures, so AI only needs to add furniture — its weakest skill (changing materials) isn't needed.
+3. *The remaining gap is almost exactly what Kymera's 3D scene contains* (furniture, kitchen, wardrobes, décor, landscaping) — reinforcing Plan A as the primary move.
+4. *The video is good reference material* (steady enough, daylight, full coverage: approach, ground floor, garden, stairs, upper floor, bathrooms, balconies) but remains below 3D-reconstruction quality due to WhatsApp compression and fast pans — the re-shoot advice stands only if a scan route is ever attempted.
+5. *Landscaping/pool are unfinished in reality* — make sure the walkthrough brief explicitly includes finished pool + garden from the design scene, as these will sell the exterior shots.
+
+### Appendix B — source notes
 
 Figures marked *(estimate)* are modeled from published marketplace rates, not live quotes. Published anchors used: Upwork architectural-rendering rate page ($20–40/hr, median ~$25); Trim Render public $75/sec flat rate (single-vendor anchor); NoTriangle $5,000–30,000 per 30–60 s; ArchiCGI animation from $3,600; Stuccco/BoxBrownie staging price pages; Runway/Veo/Kling 2026 pricing pages via trackers; Shapespark $35/$58/mo (2026-verified); Kuula ~$16–20/mo; 3DVista $499 one-time; CubiCasa pricing page; Matterport 2026 plan guides. Vendor capability claims (Matterport "Genesis" generative staging, splat AI staging, "SketchUp-to-UE5 in an hour") were treated as marketing until corroborated and are excluded from the recommendation where unverified.
