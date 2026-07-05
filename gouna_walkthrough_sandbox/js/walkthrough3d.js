@@ -252,9 +252,14 @@
       for (let i = 0; i < 4; i++) box(len, 0.07, 0.03, MAT.dark, x, 0.68 + i * 0.28, z, ry);
     };
     fence(9.7, -6.6, 19.8, 0);
-    fence(-0.2, -3.2, 6.8, Math.PI / 2);
+    fence(-2.7, -3.2, 6.8, Math.PI / 2);
     addCollider(0, -0.4, -6.8, 19.7, -6.4);
-    addCollider(0, -0.5, -6.8, -0.1, -0.2);
+    addCollider(0, -3.0, -6.8, -2.5, -0.2);
+    /* GARDEN SIDE PATH (user: from the entrance go left, then right, to the
+       garden): stepping stones along the west wall, under the west terrace */
+    for (let i = 0; i < 11; i++) plane(0.95, 0.62, MAT.flag, -1.15, 0.02, 12.1 - i * 1.12);
+    box(0.16, 0.5, 12.4, MAT.wall, -2.55, 0.25, 6.4);           /* low west boundary beside the path */
+    addCollider(0, -2.75, 0.0, -2.35, 12.7);
     /* neighbourhood + palms */
     for (let i = 0; i < 6; i++) box(6, 2.8 + (i % 3) * 0.8, 4, MAT.wall, -16 + i * 8, 1.5, -21 - (i % 2) * 5);
     const palm = (x, z, s = 1) => {
@@ -343,12 +348,17 @@
       }
     });
 
-    /* ENTRY RECESS dressing (P1 00:14–00:18): slat band over the opening,
-       gray stone panel on the west flank, timber cladding on the east flank */
-    box(3.4, 0.55, 0.45, MAT.wood, 5.4, WALL_H - 0.3, 12.62);
-    for (let i = 0; i < 4; i++) box(3.2, 0.06, 0.55, MAT.dark, 5.4, 2.28 + i * 0.15, 12.6, 0, false);
-    box(0.1, WALL_H - 0.1, 1.85, MAT.darkWall, 3.87, (WALL_H - 0.1) / 2, 11.65, 0, false);
-    box(0.1, WALL_H - 0.2, 1.85, MAT.wood, 6.93, (WALL_H - 0.2) / 2, 11.65, 0, false);
+    /* ENTRY RECESS dressing (P1 00:14–00:18 + user correction: sliding glass
+       opening with the FRONT DOOR directly to its right): slat band over the
+       opening, gray stone panel on the west flank, timber cladding on the
+       east flank beside the door */
+    box(3.9, 0.55, 0.45, MAT.wood, 5.4, WALL_H - 0.3, 12.62);
+    for (let i = 0; i < 4; i++) box(3.7, 0.06, 0.55, MAT.dark, 5.4, 2.28 + i * 0.15, 12.6, 0, false);
+    box(0.1, WALL_H - 0.1, 1.85, MAT.darkWall, 3.47, (WALL_H - 0.1) / 2, 11.65, 0, false);
+    box(0.1, WALL_H - 0.2, 1.85, MAT.wood, 7.33, (WALL_H - 0.2) / 2, 11.65, 0, false);
+    /* front-door leaf hint: timber frame around the door gap beside the slider */
+    box(0.12, 2.1, 0.1, MAT.wood, 6.16, 1.05, 10.7, 0, false);
+    box(0.12, 2.1, 0.1, MAT.wood, 7.24, 1.05, 10.7, 0, false);
 
     /* side-room slider dressing (P2 M00:55–01:02): slat band + gray reveal */
     for (let i = 0; i < 4; i++) box(0.3, 0.06, 2.2, MAT.dark, 15.7, 2.32 + i * 0.15, 2.6, 0, false);
@@ -477,10 +487,10 @@
         sp.position.set(a.p[0], y0 + 0.62, a.p[1]);
         scene.add(sp);
       });
-      /* entrance arrow at the recess pointing into the house (north) */
+      /* entrance arrow at the FRONT DOOR (right of the slider) pointing in */
       const arrow = new THREE.Mesh(new THREE.ConeGeometry(0.22, 0.7, 12), MAT.debug);
       arrow.rotation.x = -Math.PI / 2;
-      arrow.position.set(5.4, 1.3, 13.3);
+      arrow.position.set(6.7, 1.3, 13.3);
       scene.add(arrow);
     }
 

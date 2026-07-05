@@ -1,4 +1,17 @@
 # FULL STRUCTURE REBUILD — diagnosis (pre-edit)
+> **v7 addendum (navigation-based rebuild):** after this diagnosis, the user
+> supplied a corrected first-person walkthrough that overrides everything.
+> Changes applied on top of v6: entry = sliding glass opening with the FRONT
+> DOOR directly to its right (same recess); downstairs guest room MOVED to sit
+> right beside the stair (door at its base) with the guest bathroom beside it
+> (ensuite-style, "candidate"); the SW block became the driver's suite; the
+> upper "dressing" became the bathroom directly facing Room C's exit; Room C's
+> street slider shifted to the room's right corner; the west GARDEN SIDE PATH
+> added (entrance → left → right → garden); rooms labelled Room A (faces
+> stairs) / Room B (immediately left, far-left terrace door) / Room C (street
+> room) / Room D (master, huge west slider seen from the terrace). Note: the
+> ladder-room's two windows (P2 M01:31) no longer fit the relocated interior
+> guest room — recorded as an open conflict between video and user navigation.
 Mode: full structural reset. The current model (v5) is treated as unreliable;
 walkthrough evidence wins every conflict. Axes kept: garden = north (z<0),
 front street = south, side street = east, neighbour villa = west (corner lot,
