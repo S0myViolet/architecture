@@ -1,4 +1,4 @@
-# El Gouna House — Walkthrough Sandbox
+# Almaza, Sahel — Walkthrough Sandbox
 
 A local, self-contained web platform for exploring the house: the real walkthrough
 (video + extracted frames) side by side with the intended finished design (from the
@@ -31,7 +31,7 @@ python3 -m http.server 8000
 ## 3D walkthrough
 
 The **Enter 3D Walkthrough** section opens a first-person view of an *approximate*
-reconstruction of the house (inferred from the site video — not measured drawings).
+reconstruction of the house (ground floor from the Kymera technical plan; first floor still estimated).
 
 Controls: **drag** to look · **WASD / arrows** to walk · **click the floor** to walk there ·
 walk onto the **stairs** to change floors · click a **gold ring** (or "Room details") to open
